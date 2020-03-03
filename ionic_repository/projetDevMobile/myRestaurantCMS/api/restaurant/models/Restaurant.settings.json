@@ -1,0 +1,36 @@
+{
+  "connection": "default",
+  "collectionName": "restaurants",
+  "info": {
+    "name": "restaurant",
+    "description": "Recommended restaurants"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "plats": {
+      "collection": "plat",
+      "via": "restaurant"
+    },
+    "menus": {
+      "collection": "menu",
+      "via": "restaurant"
+    }
+  }
+}

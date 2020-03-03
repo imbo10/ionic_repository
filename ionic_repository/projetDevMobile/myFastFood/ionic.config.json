@@ -1,0 +1,7 @@
+{
+  "name": "myFastFood",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Retour"></ion-back-button>
+    </ion-buttons>
+    <ion-title>restaurants</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="welcome-card" *ngFor="let restaurant of restaurants" >
+  
+  
+    <ion-card-header>
+      <ion-img *ngIf="restaurant.image.url" [src]="restaurant.image.url"></ion-img>
+      <ion-card-title color="primary">{{restaurant.nom}}</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <p>{{restaurant.description}}</p>
+    </ion-card-content>
+    
+    <ion-card-header>
+      <ion-card-title style="text-align: center;" color="tertiary">Menus</ion-card-title>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let plat of restaurant.plats">
+      
+        <ion-label>{{plat.nom}}</ion-label>{{plat.prix}}
+        
+      </ion-item>
+    </ion-list>
+
+  </ion-card>
+
+</ion-content>

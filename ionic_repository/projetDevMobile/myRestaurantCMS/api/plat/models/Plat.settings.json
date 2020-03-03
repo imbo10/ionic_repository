@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "plats",
+  "info": {
+    "name": "plat",
+    "description": "Recommanded plats"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "nom": {
+      "unique": true,
+      "required": true,
+      "type": "string"
+    },
+    "prix": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "restaurant": {
+      "model": "restaurant",
+      "via": "plats"
+    },
+    "menus": {
+      "collection": "menu",
+      "via": "plats"
+    }
+  }
+}

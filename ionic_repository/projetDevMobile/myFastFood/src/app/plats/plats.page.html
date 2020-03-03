@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Menu du {{currentDate}}
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card" *ngFor="let menu of menus" >
+    
+    <ion-card-content>
+      <h2 style="text-align: center; text-transform: capitalize; color:#0cd1e8 ; size: 30px;">{{menu.restaurant.nom}}</h2>
+      <ion-list>
+        <ion-item *ngFor="let plat of menu.plats">
+        
+          <ion-label>{{plat.nom}}</ion-label>{{plat.prix}}F
+          
+        </ion-item>
+      </ion-list>
+  
+    </ion-card-content>
+    
+  </ion-card>
+</ion-content>

@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "menus",
+  "info": {
+    "name": "menu",
+    "description": "Le menu du jour"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "restaurant": {
+      "model": "restaurant",
+      "via": "menus"
+    },
+    "plats": {
+      "collection": "plat",
+      "via": "menus",
+      "dominant": true
+    }
+  }
+}
